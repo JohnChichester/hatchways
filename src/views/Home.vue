@@ -2,12 +2,14 @@
   <div class="home">
     <div>
       <div v-for="student in students" v-bind:key="student.id">
-        <img :scr="student.pic" />
-        <h1>{{ student.firstName + " " + student.lastName }}</h1>
+        <div>
+          <img :src="student.pic" />
+          <h1>{{ student.firstName + " " + student.lastName }}</h1>
+        </div>
         <p>Email: {{ student.email }}</p>
         <p>Company: {{ student.company }}</p>
         <p>Skill: {{ student.skill }}</p>
-        <p>Average: {{ student.average }}%</p>
+        <p>Average: {{ student.average }}</p>
       </div>
     </div>
   </div>
@@ -33,10 +35,13 @@ export default {
       axios.get("https://api.hatchways.io/assessment/students").then((response) => {
         //console.table(response.data.students);
         this.students = response.data.students;
+        let imageLinks = [];
         //average grades
         this.students.forEach((student) => {
           let mean = student.grades.reduce((a, b) => parseInt(a) + parseInt(b), 0) / student.grades.length;
           student.average = mean;
+          //image variable
+          imageLinks.push(student.pic);
         });
       });
     },
