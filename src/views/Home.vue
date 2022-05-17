@@ -17,17 +17,17 @@ export default {
   },
   data: function () {
     return {
-      photos: [],
+      students: [],
     };
   },
   created: function () {
-    this.indexPhotos();
+    this.indexStudents();
   },
   methods: {
-    indexPhotos: function () {
+    indexStudents: function () {
       axios.get("https://api.hatchways.io/assessment/students").then((response) => {
-        console.log("photos index", response);
-        this.photos = response.data;
+        //console.table(response.data.students);
+        this.students = response.data.students;
       });
     },
   },
