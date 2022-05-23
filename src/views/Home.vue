@@ -2,20 +2,36 @@
   <div class="home">
     <div>
       <div v-for="student in students" v-bind:key="student.id">
-        <div>
-          <img :src="student.pic" />
-          <h1>{{ student.firstName + " " + student.lastName }}</h1>
+        <div id="block_container">
+          <div>
+            <img :src="student.pic" />
+          </div>
+
+          <ul>
+            <h1>{{ student.firstName + " " + student.lastName }}</h1>
+            <p>Email: {{ student.email }}</p>
+            <p>Company: {{ student.company }}</p>
+            <p>Skill: {{ student.skill }}</p>
+            <p>Average: {{ student.average }}</p>
+          </ul>
         </div>
-        <p>Email: {{ student.email }}</p>
-        <p>Company: {{ student.company }}</p>
-        <p>Skill: {{ student.skill }}</p>
-        <p>Average: {{ student.average }}</p>
       </div>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+#avatar {
+  border-radius: ;
+}
+#block_container {
+  font: Raleway;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 
 <script>
 // @ is an alias to /src
