@@ -2,18 +2,20 @@
   <div class="home">
     <div>
       <div v-for="student in students" v-bind:key="student.id">
-        <div id="block_container">
-          <div>
-            <img :src="student.pic" />
-          </div>
-
-          <ul>
+        <div class="card">
+          <div class="title_bar">
             <h1>{{ student.firstName + " " + student.lastName }}</h1>
-            <p>Email: {{ student.email }}</p>
-            <p>Company: {{ student.company }}</p>
-            <p>Skill: {{ student.skill }}</p>
-            <p>Average: {{ student.average }}</p>
-          </ul>
+            <button>+</button>
+          </div>
+          <div class="content">
+            <img class="avatar" :src="student.pic" />
+            <ul>
+              <p>Email: {{ student.email }}</p>
+              <p>Company: {{ student.company }}</p>
+              <p>Skill: {{ student.skill }}</p>
+              <p>Average: {{ student.average }}</p>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -21,15 +23,39 @@
 </template>
 
 <style>
-#avatar {
-  border-radius: ;
+text {
+  font-family: Raleway;
 }
-#block_container {
-  font: Raleway;
+.card {
   text-align: left;
+  flex-direction: column;
   display: flex;
-  justify-content: center;
+  justify-content: flex;
+  width: 60%;
+}
+.title_bar {
+  background: #507818;
+  border-radius: 10px;
+  border: rounded;
+
+  display: flex;
+  justify-content: flex;
+
   align-items: center;
+  align-self: stretch;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+.avatar {
+  width: 10vw;
+  height: 10vw;
+  align-self: center;
+  border: 2px solid black;
+  border-radius: 50%;
 }
 </style>
 
