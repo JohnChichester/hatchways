@@ -5,7 +5,7 @@
         <div class="card">
           <div class="title_bar">
             <h1>{{ student.firstName + " " + student.lastName }}</h1>
-            <button>+</button>
+            <button class="more">+</button>
           </div>
           <div class="content">
             <img class="avatar" :src="student.pic" />
@@ -27,7 +27,7 @@ text {
   font-family: Raleway;
 }
 .card {
-  text-align: left;
+  margin: auto;
   flex-direction: column;
   display: flex;
   justify-content: flex;
@@ -36,7 +36,8 @@ text {
 .title_bar {
   background: #507818;
   border-radius: 10px;
-  border: rounded;
+  padding-left: 25px;
+  padding-right: 25px;
 
   display: flex;
   justify-content: flex;
@@ -44,11 +45,12 @@ text {
   align-items: center;
   align-self: stretch;
 }
+.more {
+  margin-left: auto;
+}
 
 .content {
   display: flex;
-  align-items: center;
-  align-self: center;
 }
 .avatar {
   width: 10vw;
