@@ -46,7 +46,9 @@ text {
   align-self: stretch;
 }
 .more {
+  background: #9ae92b;
   margin-left: auto;
+  border-radius: 50%;
 }
 
 .content {
